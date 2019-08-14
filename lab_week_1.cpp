@@ -22,11 +22,11 @@ int main()
 			{
 				beg=mid+1;
 				ans=mid;
-			\
+			
 			}
 			else
 			{
-            	end=mid-1;
+            	              end=mid-1;
 			}
 			\
 		}
