@@ -51,7 +51,8 @@ class connected
 
 };
 
-int main(){
+int main()
+{
     connected c;
     c.input();
     c.connected1();
