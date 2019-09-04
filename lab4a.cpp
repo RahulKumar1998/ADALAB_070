@@ -57,5 +57,4 @@ int main()
     c.input();
     c.connected1();
     return 0;
-
 }
