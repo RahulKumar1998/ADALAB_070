@@ -1,14 +1,13 @@
 #include <iostream>
 using namespace std;
 
-//infinity: actually a very large number
 #define INF 999
 
-//total different denominations of coins available
+//denominations available
 #define N 3
 
 //amount for which we are making change
-#define A 8
+#define A 6
 
 void display(int arr[A+1]);
         
@@ -17,9 +16,7 @@ void coinChange(int d[N+1], int C[A+1], int S[A+1]);
 void coinSet(int d[N+1], int S[A+1]);
 
 int main() {
-  //denomination d of the coins
-  //we will start from index 1
-  //so, index 0 is set to 0
+  
   int d[N+1] = {0, 1, 2, 5};
   
   //Minimum number of coins required to make change
@@ -28,29 +25,24 @@ int main() {
   //S contain the index of the coin to be included
   //in the optimal solution
   int S[A+1];
-  
-  //compute minimum;coin = i;
   coinChange(d, C, S);
   
-  //display the con;coin = i;
-        
   cout<<"\nC[p]\n";
   display(C);
   
-  //display the content of the S array
   cout<<"\nS[p]\n";
   display(S);
 
-  //display the minimum number of coins required to
-  //make change for amount A
+  
   cout<<"\nMin. no. of coins coin required to make change for amount "<<A<<" = "<< C[A]<<"\n";
   
-  //display the coins used in the optimal solution
+  
   cout<<"\nCoin Set\n";
   coinSet(d, S);
     
   return 0;
 }
+
 void coinChange(int d[N+1], int C[A+1], int S[A+1]) {
   int i, p, min, coin;
   
@@ -77,7 +69,7 @@ void coinChange(int d[N+1], int C[A+1], int S[A+1]) {
 void coinSet(int d[N+1], int S[A+1]) {
   int a = A;
   while(a > 0) {
-        cout<<"Use coin of denomination: "<< d[S[a]];
+        cout<<"Use coin of denomination: "<< d[S[a]]<<"\n";
     a = a - d[S[a]];
   }
 }
